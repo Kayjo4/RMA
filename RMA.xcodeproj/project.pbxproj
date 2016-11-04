@@ -15,6 +15,16 @@
 		D400130C1DC785B200034BE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D400130A1DC785B200034BE7 /* LaunchScreen.storyboard */; };
 		D40013171DC785B200034BE7 /* RMATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40013161DC785B200034BE7 /* RMATests.swift */; };
 		D40013221DC785B200034BE7 /* RMAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40013211DC785B200034BE7 /* RMAUITests.swift */; };
+		D40013301DCA4D6C00034BE7 /* AcronymTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D400132F1DCA4D6C00034BE7 /* AcronymTypeTableViewController.swift */; };
+		D40013321DCA4EF800034BE7 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40013311DCA4EF800034BE7 /* DummyData.swift */; };
+		D40013341DCA538500034BE7 /* MyAcronymHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40013331DCA538500034BE7 /* MyAcronymHeaderTableViewCell.swift */; };
+		D40013361DCA58F200034BE7 /* MyAcronymTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40013351DCA58F200034BE7 /* MyAcronymTableViewCell.swift */; };
+		D40013381DCA961300034BE7 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40013371DCA961300034BE7 /* MenuTableViewController.swift */; };
+		D400133A1DCA975000034BE7 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40013391DCA974F00034BE7 /* MenuTableViewCell.swift */; };
+		D400133C1DCCCA3200034BE7 /* MenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D400133B1DCCCA3200034BE7 /* MenuTransitionManager.swift */; };
+		D400133E1DCCFDF200034BE7 /* RateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D400133D1DCCFDF200034BE7 /* RateTableViewController.swift */; };
+		D40013401DCCFE2000034BE7 /* RateHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D400133F1DCCFE2000034BE7 /* RateHeaderTableViewCell.swift */; };
+		D40013421DCCFE3700034BE7 /* RateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40013411DCCFE3700034BE7 /* RateTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		D400131D1DC785B200034BE7 /* RMAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RMAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40013211DC785B200034BE7 /* RMAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMAUITests.swift; sourceTree = "<group>"; };
 		D40013231DC785B200034BE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D400132F1DCA4D6C00034BE7 /* AcronymTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcronymTypeTableViewController.swift; sourceTree = "<group>"; };
+		D40013311DCA4EF800034BE7 /* DummyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		D40013331DCA538500034BE7 /* MyAcronymHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAcronymHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		D40013351DCA58F200034BE7 /* MyAcronymTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAcronymTableViewCell.swift; sourceTree = "<group>"; };
+		D40013371DCA961300034BE7 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		D40013391DCA974F00034BE7 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		D400133B1DCCCA3200034BE7 /* MenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTransitionManager.swift; sourceTree = "<group>"; };
+		D400133D1DCCFDF200034BE7 /* RateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTableViewController.swift; sourceTree = "<group>"; };
+		D400133F1DCCFE2000034BE7 /* RateHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		D40013411DCCFE3700034BE7 /* RateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +122,20 @@
 				D40012FF1DC785B200034BE7 /* AppDelegate.swift */,
 				D40013011DC785B200034BE7 /* FirstViewController.swift */,
 				D40013031DC785B200034BE7 /* SecondViewController.swift */,
+				D40013311DCA4EF800034BE7 /* DummyData.swift */,
+				D400132F1DCA4D6C00034BE7 /* AcronymTypeTableViewController.swift */,
+				D40013331DCA538500034BE7 /* MyAcronymHeaderTableViewCell.swift */,
+				D40013351DCA58F200034BE7 /* MyAcronymTableViewCell.swift */,
 				D40013051DC785B200034BE7 /* Main.storyboard */,
 				D40013081DC785B200034BE7 /* Assets.xcassets */,
 				D400130A1DC785B200034BE7 /* LaunchScreen.storyboard */,
 				D400130D1DC785B200034BE7 /* Info.plist */,
+				D40013371DCA961300034BE7 /* MenuTableViewController.swift */,
+				D40013391DCA974F00034BE7 /* MenuTableViewCell.swift */,
+				D400133B1DCCCA3200034BE7 /* MenuTransitionManager.swift */,
+				D400133D1DCCFDF200034BE7 /* RateTableViewController.swift */,
+				D400133F1DCCFE2000034BE7 /* RateHeaderTableViewCell.swift */,
+				D40013411DCCFE3700034BE7 /* RateTableViewCell.swift */,
 			);
 			path = RMA;
 			sourceTree = "<group>";
@@ -262,8 +292,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40013401DCCFE2000034BE7 /* RateHeaderTableViewCell.swift in Sources */,
+				D40013361DCA58F200034BE7 /* MyAcronymTableViewCell.swift in Sources */,
+				D40013421DCCFE3700034BE7 /* RateTableViewCell.swift in Sources */,
 				D40013041DC785B200034BE7 /* SecondViewController.swift in Sources */,
+				D40013301DCA4D6C00034BE7 /* AcronymTypeTableViewController.swift in Sources */,
+				D40013341DCA538500034BE7 /* MyAcronymHeaderTableViewCell.swift in Sources */,
+				D40013381DCA961300034BE7 /* MenuTableViewController.swift in Sources */,
+				D400133A1DCA975000034BE7 /* MenuTableViewCell.swift in Sources */,
 				D40013001DC785B200034BE7 /* AppDelegate.swift in Sources */,
+				D400133C1DCCCA3200034BE7 /* MenuTransitionManager.swift in Sources */,
+				D40013321DCA4EF800034BE7 /* DummyData.swift in Sources */,
+				D400133E1DCCFDF200034BE7 /* RateTableViewController.swift in Sources */,
 				D40013021DC785B200034BE7 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

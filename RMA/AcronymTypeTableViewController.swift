@@ -11,6 +11,7 @@ import UIKit
 class AcronymTypeTableViewController: UITableViewController {
     
     var dummyData = DummyData()
+    
     //var menuTransitionManager = MenuTransitionManager()   (Dropdown menu)
 
     override func viewDidLoad() {

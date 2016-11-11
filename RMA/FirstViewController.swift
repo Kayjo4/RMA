@@ -8,7 +8,12 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UIPickerViewDelegate {
+    
+    var dummyData = DummyData()
+    
+    @IBOutlet weak var textField: UITextField!
+    var picker = UIPickerView()
 
 
     @IBAction func alertMessage(sender: AnyObject) {
@@ -30,7 +35,27 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        picker.delegate = self
+        //picker.dataSource = self
+        textField.inputView = picker
         
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // returns the # of rows in each component..
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: String) -> Int {
+        return dummyData.PickerOptions.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        textField.text = dummyData.PickerOptions[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return dummyData.PickerOptions[row]
     }
 
     override func didReceiveMemoryWarning() {

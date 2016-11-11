@@ -33,6 +33,21 @@ class MenuTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableCellWithIdentifier("acronymHeader") as! MenuHeaderTableViewCell
+        view.backgroundColor = UIColor.blueColor()
+        view.AcronymHeader.textColor = UIColor.whiteColor()
+        
+        switch(section) {
+        case 0:
+            view.AcronymHeader.text = "Computers"
+            return view
+        default:
+            return nil
+        }
+        
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows

@@ -17,5 +17,7 @@ class DummyData: NSObject {
     var TopRatedAcronyms : [String] = ["RMA", "ROFL", "LOL"]
     
     var EveryoneElse : [String] = ["WLOG", "BRB", "GTG", "TTYL", "TTFN", "ABC"]
+    
+    var PickerOptions = ["Computer", "Chat", "Math", "Games", "Facebook", "Twitter"]
 
 }

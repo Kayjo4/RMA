@@ -1,0 +1,6 @@
+framework module Pods_RMAUITests {
+  umbrella header "Pods-RMAUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

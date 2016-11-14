@@ -12,6 +12,8 @@ class RateTableViewController: UITableViewController {
     
     var dummyData = DummyData()
 
+    @IBOutlet weak var starRating: RatingControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

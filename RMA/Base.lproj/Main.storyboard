@@ -326,16 +326,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQZ-om-zq0">
-                                            <rect key="frame" x="286" y="11" width="29" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQZ-om-zq0">
+                                            <rect key="frame" x="8" y="11" width="29" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OBP-0G-QWt" customClass="RatingControl" customModule="RMA" customModuleProvider="target">
+                                            <rect key="frame" x="352" y="0.0" width="240" height="43"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="LQZ-om-zq0" firstAttribute="centerY" secondItem="hnj-fa-L1z" secondAttribute="centerY" id="7hF-aa-F6m"/>
-                                        <constraint firstItem="LQZ-om-zq0" firstAttribute="centerX" secondItem="hnj-fa-L1z" secondAttribute="centerX" id="b9z-zP-dGR"/>
+                                        <constraint firstItem="LQZ-om-zq0" firstAttribute="centerY" secondItem="hnj-fa-L1z" secondAttribute="centerY" id="8V7-Mk-RII"/>
+                                        <constraint firstItem="OBP-0G-QWt" firstAttribute="centerY" secondItem="hnj-fa-L1z" secondAttribute="centerY" id="j7Z-Kl-q9Q"/>
+                                        <constraint firstItem="OBP-0G-QWt" firstAttribute="trailing" secondItem="hnj-fa-L1z" secondAttribute="trailingMargin" id="vEP-4y-CyY"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -355,6 +360,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="starRating" destination="OBP-0G-QWt" id="nA3-Qp-0ph"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJr-aI-NRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -396,6 +404,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xaE-e1-TXq"/>
+        <segue reference="6j8-cZ-3IZ"/>
     </inferredMetricsTieBreakers>
 </document>

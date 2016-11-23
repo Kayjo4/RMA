@@ -11,11 +11,14 @@ import UIKit
 class AcronymTypeTableViewController: UITableViewController {
     
     var dummyData = DummyData()
+    var identities = [String]()
     
     //var menuTransitionManager = MenuTransitionManager()   (Dropdown menu)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        identities = ["Computer", "Chat", "Math", "Games", "Facebook", "Twitter"]
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -81,6 +84,13 @@ class AcronymTypeTableViewController: UITableViewController {
         // Configure the cell...
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let vcName = identities[indexPath.row]
+        let viewController = storyboard?.instantiateViewControllerWithIdentifier(vcName)
+        self.navigationController?.pushViewController(viewController!, animated: true)
     }
 
     /*

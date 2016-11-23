@@ -69,6 +69,7 @@ class RateTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("rateCell", forIndexPath: indexPath) as! RateTableViewCell
+        
         switch (indexPath.section) {
         case 0:
             cell.RatedAcronyms.text = dummyData.TopRatedAcronyms[indexPath.row]

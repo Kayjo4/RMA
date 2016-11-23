@@ -12,6 +12,9 @@ class FirstViewController: UIViewController, UIPickerViewDelegate {
     
     var dummyData = DummyData()
     
+    @IBOutlet weak var acronym: UITextField!
+    
+    
     @IBOutlet weak var textField: UITextField!
     var picker = UIPickerView()
 

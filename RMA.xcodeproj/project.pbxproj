@@ -282,15 +282,18 @@
 					D40012FB1DC785B100034BE7 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = XDGUJ5LZL6;
+						LastSwiftMigration = 0810;
 					};
 					D40013111DC785B200034BE7 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = XDGUJ5LZL6;
+						LastSwiftMigration = 0810;
 						TestTargetID = D40012FB1DC785B100034BE7;
 					};
 					D400131C1DC785B200034BE7 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = XDGUJ5LZL6;
+						LastSwiftMigration = 0810;
 						TestTargetID = D40012FB1DC785B100034BE7;
 					};
 				};
@@ -646,6 +649,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RMA.RMA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -658,6 +662,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RMA.RMA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -670,6 +675,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RMA.RMATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RMA.app/RMA";
 			};
 			name = Debug;
@@ -683,6 +689,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RMA.RMATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RMA.app/RMA";
 			};
 			name = Release;
@@ -695,6 +702,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RMA.RMAUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = RMA;
 				USES_XCTRUNNER = YES;
 			};
@@ -708,6 +716,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RMA.RMAUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = RMA;
 				USES_XCTRUNNER = YES;
 			};

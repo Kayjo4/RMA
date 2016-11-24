@@ -19,20 +19,20 @@ class FirstViewController: UIViewController, UIPickerViewDelegate {
     var picker = UIPickerView()
 
 
-    @IBAction func alertMessage(sender: AnyObject) {
+    @IBAction func alertMessage(_ sender: AnyObject) {
         
         let title = "Submit Acronym"
         let message = "Are you sure you want to submit?"
         let okText = "Submit"
         //let noText = "Cancel"
         
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: nil)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.cancel, handler: nil)
         //let cancelButton = UIAlertAction(title: noText, style: UIAlertActionStyle.Cancel, handler: nil)
         alert.addAction(okayButton)
         //alert.addAction(cancelButton)
         
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -44,20 +44,20 @@ class FirstViewController: UIViewController, UIPickerViewDelegate {
         
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int {
         return 1
     }
     
     // returns the # of rows in each component..
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: String) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: String) -> Int {
         return dummyData.PickerOptions.count
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         textField.text = dummyData.PickerOptions[row]
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return dummyData.PickerOptions[row]
     }
 

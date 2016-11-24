@@ -35,13 +35,14 @@ class FirstViewController: UIViewController, UIPickerViewDelegate {
         present(alert, animated: true, completion: nil)
     }
     
+    static let thisInt = 8
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         picker.delegate = self
         //picker.dataSource = self
         textField.inputView = picker
-        
     }
     
     func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int {

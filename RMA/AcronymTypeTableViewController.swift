@@ -40,15 +40,15 @@ class AcronymTypeTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableCellWithIdentifier("headerCell") as! MyAcronymHeaderTableViewCell
-        view.backgroundColor = UIColor.blueColor()
-        view.Header.textColor = UIColor.whiteColor()
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! MyAcronymHeaderTableViewCell
+        view.backgroundColor = UIColor.blue
+        view.Header.textColor = UIColor.white
         
         switch(section) {
         case 0:
@@ -60,7 +60,7 @@ class AcronymTypeTableViewController: UITableViewController {
         
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         switch (section) {
         case 0:
@@ -71,8 +71,8 @@ class AcronymTypeTableViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("typeCell", forIndexPath: indexPath) as! MyAcronymTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "typeCell", for: indexPath) as! MyAcronymTableViewCell
         switch (indexPath.section) {
         case 0:
             cell.AcronymType.text = dummyData.MyAcronym[indexPath.row]
@@ -86,10 +86,10 @@ class AcronymTypeTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let vcName = identities[indexPath.row]
-        let viewController = storyboard?.instantiateViewControllerWithIdentifier(vcName)
+        let viewController = storyboard?.instantiateViewController(withIdentifier: vcName)
         self.navigationController?.pushViewController(viewController!, animated: true)
     }
 

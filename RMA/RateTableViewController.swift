@@ -31,15 +31,15 @@ class RateTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableCellWithIdentifier("rateHeader") as! RateHeaderTableViewCell
-        view.backgroundColor = UIColor.blueColor()
-        view.RateHeader.textColor = UIColor.whiteColor()
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableCell(withIdentifier: "rateHeader") as! RateHeaderTableViewCell
+        view.backgroundColor = UIColor.blue
+        view.RateHeader.textColor = UIColor.white
         
         switch(section) {
         case 0:
@@ -54,7 +54,7 @@ class RateTableViewController: UITableViewController {
         
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         switch (section) {
         case 0:
@@ -67,8 +67,8 @@ class RateTableViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("rateCell", forIndexPath: indexPath) as! RateTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "rateCell", for: indexPath) as! RateTableViewCell
         
         switch (indexPath.section) {
         case 0:

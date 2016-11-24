@@ -25,15 +25,15 @@ class MenuTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableCellWithIdentifier("acronymHeader") as! MenuHeaderTableViewCell
-        view.backgroundColor = UIColor.blueColor()
-        view.AcronymHeader.textColor = UIColor.whiteColor()
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableCell(withIdentifier: "acronymHeader") as! MenuHeaderTableViewCell
+        view.backgroundColor = UIColor.blue
+        view.AcronymHeader.textColor = UIColor.white
         
         switch(section) {
         case 0:
@@ -45,7 +45,7 @@ class MenuTableViewController: UITableViewController {
         
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         switch (section) {
         case 0:
@@ -56,8 +56,8 @@ class MenuTableViewController: UITableViewController {
     }
 
    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("acronymCell", forIndexPath: indexPath) as! MenuTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "acronymCell", for: indexPath) as! MenuTableViewCell
         switch (indexPath.section) {
         case 0:
             cell.Acronym.text = dummyData.AcronymList[indexPath.row]

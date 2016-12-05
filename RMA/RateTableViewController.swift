@@ -86,7 +86,38 @@ class RateTableViewController: UITableViewController {
         return cell
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey:"isUserLoggedIn")
+        
+        //not working????
+        if(!isUserLoggedIn){
+            
+            self.performSegue(withIdentifier: "loginView", sender: self)
+            
+            //self.dismiss(animated: false, completion: nil)
+        }
+        
+        
+    }
 
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        UserDefaults.standard.synchronize()
+        
+        /*
+        let loginViewController = self.storyboard!.instantiateViewController(withIdentifier: "loginView") as! LoginViewController
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        appDelegate.window?.rootViewController = loginViewController
+        
+        appDelegate.window?.makeKeyAndVisible()
+ */
+        
+        self.performSegue(withIdentifier: "loginView", sender: self)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

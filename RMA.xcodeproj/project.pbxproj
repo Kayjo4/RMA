@@ -30,6 +30,9 @@
 		D40013421DCCFE3700034BE7 /* RateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40013411DCCFE3700034BE7 /* RateTableViewCell.swift */; };
 		D42A07471DD0FBD6004D0581 /* MenuHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42A07461DD0FBD6004D0581 /* MenuHeaderTableViewCell.swift */; };
 		D42F91261DDA6D3D006C1167 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F91251DDA6D3D006C1167 /* RatingControl.swift */; };
+		D4AB3F981DF2171C002A7597 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AB3F971DF2171C002A7597 /* CircularTransition.swift */; };
+		D4BF6C151DED102300FCE3FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BF6C141DED102300FCE3FB /* LoginViewController.swift */; };
+		D4CE60831DECBC1F0042BBE8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE60821DECBC1F0042BBE8 /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,9 @@
 		D40013411DCCFE3700034BE7 /* RateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTableViewCell.swift; sourceTree = "<group>"; };
 		D42A07461DD0FBD6004D0581 /* MenuHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		D42F91251DDA6D3D006C1167 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		D4AB3F971DF2171C002A7597 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
+		D4BF6C141DED102300FCE3FB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D4CE60821DECBC1F0042BBE8 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DF8FD94015E9CB383C931ED8 /* Pods-RMAUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RMAUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RMAUITests/Pods-RMAUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED362FDDDA8205ED8B06629C /* Pods-RMATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RMATests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RMATests/Pods-RMATests.release.xcconfig"; sourceTree = "<group>"; };
 		F48AABEA4E83D451ABE96894 /* Pods_RMA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RMA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +167,7 @@
 				D40013331DCA538500034BE7 /* MyAcronymHeaderTableViewCell.swift */,
 				D40013351DCA58F200034BE7 /* MyAcronymTableViewCell.swift */,
 				D40013051DC785B200034BE7 /* Main.storyboard */,
+				D4CE60821DECBC1F0042BBE8 /* RegistrationViewController.swift */,
 				D40013081DC785B200034BE7 /* Assets.xcassets */,
 				D400130A1DC785B200034BE7 /* LaunchScreen.storyboard */,
 				D400130D1DC785B200034BE7 /* Info.plist */,
@@ -172,6 +179,8 @@
 				D40013411DCCFE3700034BE7 /* RateTableViewCell.swift */,
 				D42A07461DD0FBD6004D0581 /* MenuHeaderTableViewCell.swift */,
 				D42F91251DDA6D3D006C1167 /* RatingControl.swift */,
+				D4BF6C141DED102300FCE3FB /* LoginViewController.swift */,
+				D4AB3F971DF2171C002A7597 /* CircularTransition.swift */,
 			);
 			path = RMA;
 			sourceTree = "<group>";
@@ -498,8 +507,11 @@
 				D400133A1DCA975000034BE7 /* MenuTableViewCell.swift in Sources */,
 				D40013001DC785B200034BE7 /* AppDelegate.swift in Sources */,
 				D42A07471DD0FBD6004D0581 /* MenuHeaderTableViewCell.swift in Sources */,
+				D4CE60831DECBC1F0042BBE8 /* RegistrationViewController.swift in Sources */,
 				D400133C1DCCCA3200034BE7 /* MenuTransitionManager.swift in Sources */,
 				D40013321DCA4EF800034BE7 /* DummyData.swift in Sources */,
+				D4AB3F981DF2171C002A7597 /* CircularTransition.swift in Sources */,
+				D4BF6C151DED102300FCE3FB /* LoginViewController.swift in Sources */,
 				D400133E1DCCFDF200034BE7 /* RateTableViewController.swift in Sources */,
 				D42F91261DDA6D3D006C1167 /* RatingControl.swift in Sources */,
 				D40013021DC785B200034BE7 /* FirstViewController.swift in Sources */,

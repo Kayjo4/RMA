@@ -14,6 +14,9 @@ class AcronymTypeTableViewController: UITableViewController {
     var identities = [String]()
     
     //var menuTransitionManager = MenuTransitionManager()   (Dropdown menu)
+    
+    let cellReuseIdentifier = "cell"
+    let cellSpacingHeight: CGFloat = 40
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +28,26 @@ class AcronymTypeTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 40
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+
     
     /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let menuTableViewController = segue.destinationViewController as! MenuTableViewController      (Dropdown menu)
@@ -47,7 +64,7 @@ class AcronymTypeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! MyAcronymHeaderTableViewCell
-        view.backgroundColor = UIColor.blue
+        view.backgroundColor = UIColor.clear
         view.Header.textColor = UIColor.white
         
         switch(section) {
@@ -73,6 +90,14 @@ class AcronymTypeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "typeCell", for: indexPath) as! MyAcronymTableViewCell
+        
+        cell.backgroundColor = UIColor.white
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
+        
+        
         switch (indexPath.section) {
         case 0:
             cell.AcronymType.text = dummyData.MyAcronym[indexPath.row]

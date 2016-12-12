@@ -16,11 +16,13 @@ class RegistrationViewController: UIViewController {
     
     @IBOutlet weak var dismissButton: UIButton!
     
+    @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         dismissButton.layer.cornerRadius = dismissButton.frame.size.width / 2
+        registerButton.layer.cornerRadius = registerButton.frame.size.width / 6
     }
     
     

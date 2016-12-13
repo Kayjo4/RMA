@@ -12,15 +12,31 @@ class MenuTableViewController: UITableViewController {
     
     var dummyData = DummyData()
     
+    
+    let cellReuseIdentifier = "cell"
+    let cellSpacingHeight: CGFloat = 40
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.delegate = self
+        tableView.dataSource = self
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 40
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
     }
 
     // MARK: - Table view data source
@@ -32,7 +48,7 @@ class MenuTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableCell(withIdentifier: "acronymHeader") as! MenuHeaderTableViewCell
-        view.backgroundColor = UIColor.blue
+        view.backgroundColor = UIColor.clear
         view.AcronymHeader.textColor = UIColor.white
         
         switch(section) {
@@ -58,6 +74,14 @@ class MenuTableViewController: UITableViewController {
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "acronymCell", for: indexPath) as! MenuTableViewCell
+        
+        cell.backgroundColor = UIColor.white
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
+        
+        
         switch (indexPath.section) {
         case 0:
             cell.Acronym.text = dummyData.AcronymList[indexPath.row]

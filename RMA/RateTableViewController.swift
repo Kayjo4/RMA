@@ -14,6 +14,10 @@ class RateTableViewController: UITableViewController {
 
     @IBOutlet weak var starRating: RatingControl!
     
+    let cellReuseIdentifier = "cell"
+    let cellSpacingHeight: CGFloat = 5
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,11 +26,28 @@ class RateTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = 80
+        
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.delegate = self
+        tableView.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 100
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
     }
 
     // MARK: - Table view data source
@@ -38,8 +59,11 @@ class RateTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableCell(withIdentifier: "rateHeader") as! RateHeaderTableViewCell
-        view.backgroundColor = UIColor.blue
+        view.backgroundColor = UIColor.clear
         view.RateHeader.textColor = UIColor.white
+        
+        //let headerView = UIView()
+        //headerView.backgroundColor = UIColor.clear
         
         switch(section) {
         case 0:
@@ -70,6 +94,12 @@ class RateTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rateCell", for: indexPath) as! RateTableViewCell
         
+        cell.backgroundColor = UIColor.white
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
+        
         switch (indexPath.section) {
         case 0:
             cell.RatedAcronyms.text = dummyData.TopRatedAcronyms[indexPath.row]
@@ -90,12 +120,11 @@ class RateTableViewController: UITableViewController {
         
         let isUserLoggedIn = UserDefaults.standard.bool(forKey:"isUserLoggedIn")
         
-        //not working????
         if(!isUserLoggedIn){
             
             self.performSegue(withIdentifier: "loginView", sender: self)
             
-            //self.dismiss(animated: false, completion: nil)
+            
         }
         
         

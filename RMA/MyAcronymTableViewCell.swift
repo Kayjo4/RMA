@@ -9,8 +9,5 @@
 import UIKit
 
 class MyAcronymTableViewCell: UITableViewCell {
-
-
     @IBOutlet weak var AcronymType: UILabel!
-
 }

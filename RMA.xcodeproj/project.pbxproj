@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C6A700E1E0045B10099E9A1 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6A700D1E0045B10099E9A1 /* Profile.swift */; };
+		4C6A70111E00463D0099E9A1 /* Acronyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6A70101E00463D0099E9A1 /* Acronyms.swift */; };
 		88CA6E0C4ACA255BAA2FCA90 /* Pods_RMA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48AABEA4E83D451ABE96894 /* Pods_RMA.framework */; };
 		B81A65E166A4DE57C8AF50FC /* Pods_RMATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A39711751FC011C150E1731 /* Pods_RMATests.framework */; };
 		C7CC6C5934EF8619BD207946 /* Pods_RMAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96E86BFFFE9532E432EF266 /* Pods_RMAUITests.framework */; };
@@ -55,6 +57,8 @@
 /* Begin PBXFileReference section */
 		11D6072C3815039C610C40B6 /* Pods-RMA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RMA.release.xcconfig"; path = "Pods/Target Support Files/Pods-RMA/Pods-RMA.release.xcconfig"; sourceTree = "<group>"; };
 		230A150F5724F078862D4B3D /* Pods-RMAUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RMAUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RMAUITests/Pods-RMAUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4C6A700D1E0045B10099E9A1 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		4C6A70101E00463D0099E9A1 /* Acronyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acronyms.swift; sourceTree = "<group>"; };
 		5A39711751FC011C150E1731 /* Pods_RMATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RMATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA2545E9E8A890D679C2138 /* Pods-RMATests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RMATests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RMATests/Pods-RMATests.debug.xcconfig"; sourceTree = "<group>"; };
 		A96E86BFFFE9532E432EF266 /* Pods_RMAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RMAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C6A700B1E0044BB0099E9A1 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				D400130A1DC785B200034BE7 /* LaunchScreen.storyboard */,
+				D400130D1DC785B200034BE7 /* Info.plist */,
+				D40013081DC785B200034BE7 /* Assets.xcassets */,
+				D40012FF1DC785B200034BE7 /* AppDelegate.swift */,
+				D40013051DC785B200034BE7 /* Main.storyboard */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		4C6A700C1E0045A00099E9A1 /* Scotty */ = {
+			isa = PBXGroup;
+			children = (
+				D40013011DC785B200034BE7 /* FirstViewController.swift */,
+				D40013031DC785B200034BE7 /* SecondViewController.swift */,
+				D40013311DCA4EF800034BE7 /* DummyData.swift */,
+				D400132F1DCA4D6C00034BE7 /* AcronymTypeTableViewController.swift */,
+				D40013331DCA538500034BE7 /* MyAcronymHeaderTableViewCell.swift */,
+				D40013351DCA58F200034BE7 /* MyAcronymTableViewCell.swift */,
+				D4CE60821DECBC1F0042BBE8 /* RegistrationViewController.swift */,
+				D40013371DCA961300034BE7 /* MenuTableViewController.swift */,
+				4C6A70121E0048470099E9A1 /* TableViewCells */,
+				D400133B1DCCCA3200034BE7 /* MenuTransitionManager.swift */,
+				D400133D1DCCFDF200034BE7 /* RateTableViewController.swift */,
+				D42F91251DDA6D3D006C1167 /* RatingControl.swift */,
+				D4BF6C141DED102300FCE3FB /* LoginViewController.swift */,
+				D4AB3F971DF2171C002A7597 /* CircularTransition.swift */,
+			);
+			name = Scotty;
+			sourceTree = "<group>";
+		};
+		4C6A700F1E0045B50099E9A1 /* Seth */ = {
+			isa = PBXGroup;
+			children = (
+				4C6A700D1E0045B10099E9A1 /* Profile.swift */,
+				4C6A70101E00463D0099E9A1 /* Acronyms.swift */,
+			);
+			name = Seth;
+			sourceTree = "<group>";
+		};
+		4C6A70121E0048470099E9A1 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				D400133F1DCCFE2000034BE7 /* RateHeaderTableViewCell.swift */,
+				D42A07461DD0FBD6004D0581 /* MenuHeaderTableViewCell.swift */,
+				D40013411DCCFE3700034BE7 /* RateTableViewCell.swift */,
+				D40013391DCA974F00034BE7 /* MenuTableViewCell.swift */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
 		7C8AA5FE639279F1EC58B071 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,28 +216,9 @@
 		D40012FE1DC785B100034BE7 /* RMA */ = {
 			isa = PBXGroup;
 			children = (
-				D40012FF1DC785B200034BE7 /* AppDelegate.swift */,
-				D40013011DC785B200034BE7 /* FirstViewController.swift */,
-				D40013031DC785B200034BE7 /* SecondViewController.swift */,
-				D40013311DCA4EF800034BE7 /* DummyData.swift */,
-				D400132F1DCA4D6C00034BE7 /* AcronymTypeTableViewController.swift */,
-				D40013331DCA538500034BE7 /* MyAcronymHeaderTableViewCell.swift */,
-				D40013351DCA58F200034BE7 /* MyAcronymTableViewCell.swift */,
-				D40013051DC785B200034BE7 /* Main.storyboard */,
-				D4CE60821DECBC1F0042BBE8 /* RegistrationViewController.swift */,
-				D40013081DC785B200034BE7 /* Assets.xcassets */,
-				D400130A1DC785B200034BE7 /* LaunchScreen.storyboard */,
-				D400130D1DC785B200034BE7 /* Info.plist */,
-				D40013371DCA961300034BE7 /* MenuTableViewController.swift */,
-				D40013391DCA974F00034BE7 /* MenuTableViewCell.swift */,
-				D400133B1DCCCA3200034BE7 /* MenuTransitionManager.swift */,
-				D400133D1DCCFDF200034BE7 /* RateTableViewController.swift */,
-				D400133F1DCCFE2000034BE7 /* RateHeaderTableViewCell.swift */,
-				D40013411DCCFE3700034BE7 /* RateTableViewCell.swift */,
-				D42A07461DD0FBD6004D0581 /* MenuHeaderTableViewCell.swift */,
-				D42F91251DDA6D3D006C1167 /* RatingControl.swift */,
-				D4BF6C141DED102300FCE3FB /* LoginViewController.swift */,
-				D4AB3F971DF2171C002A7597 /* CircularTransition.swift */,
+				4C6A700B1E0044BB0099E9A1 /* Global */,
+				4C6A700F1E0045B50099E9A1 /* Seth */,
+				4C6A700C1E0045A00099E9A1 /* Scotty */,
 			);
 			path = RMA;
 			sourceTree = "<group>";
@@ -506,6 +544,7 @@
 				D40013381DCA961300034BE7 /* MenuTableViewController.swift in Sources */,
 				D400133A1DCA975000034BE7 /* MenuTableViewCell.swift in Sources */,
 				D40013001DC785B200034BE7 /* AppDelegate.swift in Sources */,
+				4C6A70111E00463D0099E9A1 /* Acronyms.swift in Sources */,
 				D42A07471DD0FBD6004D0581 /* MenuHeaderTableViewCell.swift in Sources */,
 				D4CE60831DECBC1F0042BBE8 /* RegistrationViewController.swift in Sources */,
 				D400133C1DCCCA3200034BE7 /* MenuTransitionManager.swift in Sources */,
@@ -513,6 +552,7 @@
 				D4AB3F981DF2171C002A7597 /* CircularTransition.swift in Sources */,
 				D4BF6C151DED102300FCE3FB /* LoginViewController.swift in Sources */,
 				D400133E1DCCFDF200034BE7 /* RateTableViewController.swift in Sources */,
+				4C6A700E1E0045B10099E9A1 /* Profile.swift in Sources */,
 				D42F91261DDA6D3D006C1167 /* RatingControl.swift in Sources */,
 				D40013021DC785B200034BE7 /* FirstViewController.swift in Sources */,
 			);

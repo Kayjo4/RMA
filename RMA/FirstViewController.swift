@@ -8,65 +8,97 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UIPickerViewDelegate {
+class FirstViewController: UIViewController {
     
-    var dummyData = DummyData()
+    var dummyData = DummyData2()
     
-    @IBOutlet weak var acronym: UITextField!
+    @IBOutlet weak var typeTextfield: UITextField!
+    @IBOutlet weak var acronymTextField: UITextField!
+    @IBOutlet weak var definitionTextView: UITextView!
     
-    
-    @IBOutlet weak var textField: UITextField!
+    var delegate: AcronymDelegate?
+    var textViewFirstClick: Bool = true
     var picker = UIPickerView()
+    var type: Acronym.AcronymType?
+    var acronym: String?
+    var definition: String?
 
-
-    @IBAction func alertMessage(_ sender: AnyObject) {
-        
-        let title = "Submit Acronym"
-        let message = "Are you sure you want to submit?"
-        let okText = "Submit"
-        //let noText = "Cancel"
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.cancel, handler: nil)
-        //let cancelButton = UIAlertAction(title: noText, style: UIAlertActionStyle.Cancel, handler: nil)
-        alert.addAction(okayButton)
-        //alert.addAction(cancelButton)
-        
-        present(alert, animated: true, completion: nil)
-    }
-    
-    static let thisInt = 8
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         picker.delegate = self
-        //picker.dataSource = self
-        textField.inputView = picker
+        typeTextfield.inputView = picker
+        acronymTextField.delegate = self
+        definitionTextView.delegate = self
+        
+        definitionTextView.layer.borderWidth = 1
+        definitionTextView.layer.borderColor = UIColor.lightGray.cgColor
+        definitionTextView.layer.cornerRadius = 4
     }
     
+    @IBAction func doneBarButtonWasSelected(_ sender: UIBarButtonItem) {
+        view.endEditing(true)
+        if type != nil && acronym != nil && definition != nil {
+            delegate?.addAcronym(type: type!, acronym: acronym!, definition: definition!)
+            _ = navigationController?.popViewController(animated: true)
+        } else {
+            let alert = UIAlertController(title: "Finish Fields", message: "All of the fields are required. Finish filling them out and try again.", preferredStyle: UIAlertControllerStyle.alert)
+            let okayButton = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel, handler: nil)
+            alert.addAction(okayButton)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+}
+
+extension FirstViewController: UIPickerViewDelegate {
     func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int {
         return 1
     }
     
     // returns the # of rows in each component..
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: String) -> Int {
-        return dummyData.PickerOptions.count
+        return dummyData.types.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        textField.text = dummyData.PickerOptions[row]
+        typeTextfield.text = dummyData.types[row]
+        type = Acronym.AcronymType(rawValue: row)
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dummyData.PickerOptions[row]
+        return dummyData.types[row]
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
+extension FirstViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text != nil && textField.text != "" {
+            acronym = textField.text
+        }
+    }
+}
+
+extension FirstViewController: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text != nil && textView.text != "" {
+            definition = textView.text
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text == "" {
+            textView.text = "Add Definition"
+            textView.textColor = UIColor.darkGray
+            textViewFirstClick = true
+            view.endEditing(true)
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textViewFirstClick {
+            textView.text = ""
+            textView.textColor = UIColor.black
+            textViewFirstClick = false
+        }
+    }
+}

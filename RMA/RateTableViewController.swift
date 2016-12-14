@@ -10,101 +10,64 @@ import UIKit
 
 class RateTableViewController: UITableViewController {
     
-    var dummyData = DummyData()
+    var dummyData = DummyData2()
 
     @IBOutlet weak var starRating: RatingControl!
     
     let cellReuseIdentifier = "cell"
     let cellSpacingHeight: CGFloat = 5
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        //tableView.rowHeight = UITableViewAutomaticDimension
-        //tableView.estimatedRowHeight = 80
+        tableView.estimatedRowHeight = 100
         
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return UITableViewAutomaticDimension
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        if dummyData.getAcronymType(type: section).count == 0 {
+            return 0
+        } else {
+            return 40
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 2
+        return dummyData.acronymTypeCount
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableCell(withIdentifier: "rateHeader") as! RateHeaderTableViewCell
-        view.backgroundColor = UIColor.clear
+
         view.RateHeader.textColor = UIColor.white
+        view.RateHeader.text = dummyData.types[section]
         
-        //let headerView = UIView()
-        //headerView.backgroundColor = UIColor.clear
-        
-        switch(section) {
-        case 0:
-            view.RateHeader.text = "Top Rated"
-            return view
-        case 1:
-            view.RateHeader.text = "Everyone Else"
-            return view
-        default:
-            return nil
-        }
-        
+        return view.contentView
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        switch (section) {
-        case 0:
-            return dummyData.TopRatedAcronyms.count
-        case 1:
-            return dummyData.EveryoneElse.count
-        default:
-            return 0
-        }
+        return dummyData.getAcronymType(type: section).count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rateCell", for: indexPath) as! RateTableViewCell
         
-        cell.backgroundColor = UIColor.white
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
-        cell.clipsToBounds = true
+        cell.backgroundColor = UIColor.clear
+        cell.contentView.backgroundColor = UIColor.clear
+        cell.containerView.layer.borderColor = UIColor.black.cgColor
+        cell.containerView.layer.cornerRadius = 8
+        cell.containerView.layer.borderWidth = 1
         
-        switch (indexPath.section) {
-        case 0:
-            cell.RatedAcronyms.text = dummyData.TopRatedAcronyms[indexPath.row]
-            break
-        case 1:
-            cell.RatedAcronyms.text = dummyData.EveryoneElse[indexPath.row]
-            break
-        default:
-            break
-        }
-
-        // Configure the cell...
-
+        let acronyms = dummyData.getAcronymType(type: indexPath.section)
+        cell.ratedAcronyms.text = acronyms[indexPath.row].name
+        cell.definitionTextView.text = acronyms[indexPath.row].definition
         return cell
     }
     
@@ -119,7 +82,7 @@ class RateTableViewController: UITableViewController {
             
         }
         
-        
+        tableView.reloadData()
     }
 
     @IBAction func logoutButtonTapped(_ sender: Any) {
@@ -138,5 +101,22 @@ class RateTableViewController: UITableViewController {
  */
         
         self.performSegue(withIdentifier: "loginView", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? FirstViewController {
+            vc.delegate = self
+        }
+    }
+}
+
+protocol AcronymDelegate {
+    func addAcronym(type: Acronym.AcronymType, acronym: String, definition: String)
+}
+
+extension RateTableViewController: AcronymDelegate {
+    func addAcronym(type: Acronym.AcronymType, acronym: String, definition: String) {
+        let newAcronym = Acronym(type: type, name: acronym, def: definition)
+        dummyData.acronyms.append(newAcronym)
     }
 }

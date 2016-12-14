@@ -140,19 +140,19 @@
 		4C6A700C1E0045A00099E9A1 /* Scotty */ = {
 			isa = PBXGroup;
 			children = (
+				4C6A70121E0048470099E9A1 /* TableViewCells */,
 				D40013011DC785B200034BE7 /* FirstViewController.swift */,
 				D40013031DC785B200034BE7 /* SecondViewController.swift */,
+				D4BF6C141DED102300FCE3FB /* LoginViewController.swift */,
 				D40013311DCA4EF800034BE7 /* DummyData.swift */,
 				D400132F1DCA4D6C00034BE7 /* AcronymTypeTableViewController.swift */,
 				D40013331DCA538500034BE7 /* MyAcronymHeaderTableViewCell.swift */,
 				D40013351DCA58F200034BE7 /* MyAcronymTableViewCell.swift */,
 				D4CE60821DECBC1F0042BBE8 /* RegistrationViewController.swift */,
 				D40013371DCA961300034BE7 /* MenuTableViewController.swift */,
-				4C6A70121E0048470099E9A1 /* TableViewCells */,
 				D400133B1DCCCA3200034BE7 /* MenuTransitionManager.swift */,
 				D400133D1DCCFDF200034BE7 /* RateTableViewController.swift */,
 				D42F91251DDA6D3D006C1167 /* RatingControl.swift */,
-				D4BF6C141DED102300FCE3FB /* LoginViewController.swift */,
 				D4AB3F971DF2171C002A7597 /* CircularTransition.swift */,
 			);
 			name = Scotty;

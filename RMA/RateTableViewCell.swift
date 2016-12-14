@@ -9,5 +9,12 @@
 import UIKit
 
 class RateTableViewCell: UITableViewCell {
-    @IBOutlet weak var RatedAcronyms: UILabel!
+    @IBOutlet weak var ratedAcronyms: UILabel!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var definitionTextView: UITextView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectionStyle = .none
+    }
 }

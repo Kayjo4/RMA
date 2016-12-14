@@ -9,12 +9,5 @@
 import UIKit
 
 class RateTableViewCell: UITableViewCell {
-
     @IBOutlet weak var RatedAcronyms: UILabel!
-    
-    
-    
-    
-
-
 }

@@ -9,8 +9,5 @@
 import UIKit
 
 class RateHeaderTableViewCell: UITableViewCell {
-
     @IBOutlet weak var RateHeader: UILabel!
-
-
 }

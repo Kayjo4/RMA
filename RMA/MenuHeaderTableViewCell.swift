@@ -9,8 +9,5 @@
 import UIKit
 
 class MenuHeaderTableViewCell: UITableViewCell {
-
     @IBOutlet weak var AcronymHeader: UILabel!
-
-
 }

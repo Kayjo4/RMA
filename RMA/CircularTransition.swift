@@ -115,13 +115,5 @@ extension CircularTransition: UIViewControllerAnimatedTransitioning {
         let size = CGSize(width: offestVector, height: offestVector)
         
         return CGRect(origin: CGPoint.zero, size: size)
-    }
-    
-    
-    
-    
-    
-    
-    
-    
+    }  
 }

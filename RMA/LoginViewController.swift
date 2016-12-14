@@ -20,7 +20,6 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
     @IBOutlet weak var circle3: UILabel!
     @IBOutlet weak var circle4: UILabel!
     
-    
     @IBOutlet weak var transitionButton: UIButton!
     
     let transition = CircularTransition()
@@ -29,7 +28,6 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
         super.viewDidLoad()
         
         loginButton.layer.cornerRadius = loginButton.frame.size.width / 2
-        
         
         circle1.layer.cornerRadius = 87
         circle1.clipsToBounds = true
@@ -82,7 +80,6 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
         let userPassword = userPasswordTextField.text
         
         let userEmailStored = UserDefaults.standard.string (forKey: "userEmail")
-        
         let userPasswordStored = UserDefaults.standard.string (forKey: "userPassword")
         
         //check if password is incorrect
@@ -123,16 +120,12 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
     func displayMyAlertMessage(userMessage: String) {
         
         let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
-        
         let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
-        
         myAlert.addAction(okAction)
-        
         self.present(myAlert, animated: true, completion: nil)
         
     }
     
-
     func animation() {
         
         //login button animation
@@ -150,20 +143,17 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                 //self.loginButton.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
                 
             })
-            
         }
         
         UIView.animate(withDuration: 5) {
             self.loginButton.frame = CGRect(x: -357, y: 191, width: 88, height: 30)
         }
         
-        
         //Transition button animation
         UIView.animate(withDuration: 5, delay: 0, animations: {
             
             self.transitionButton.frame.origin.x -= 143
-            
-            
+
         }) { _ in
             
             UIView.animate(withDuration: 1, animations: {
@@ -173,14 +163,11 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                 //self.loginButton.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
                 
             })
-            
         }
         
         UIView.animate(withDuration: 5) {
             self.transitionButton.frame = CGRect(x: 156, y: 700, width: 60, height: 60)
         }
-        
-        
         
         //circle1 animation
         UIView.animate(withDuration: 5, delay: 0, animations: {
@@ -197,14 +184,11 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                 //self.loginButton.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
                 
             })
-            
         }
         
         UIView.animate(withDuration: 5) {
             self.circle1.frame = CGRect(x: -175, y: 50, width: 174, height: 174)
         }
-        
-        
         
         //circle2 animation
         UIView.animate(withDuration: 5, delay: 0, animations: {
@@ -221,14 +205,11 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                 //self.loginButton.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
                 
             })
-            
         }
         
         UIView.animate(withDuration: 5) {
             self.circle2.frame = CGRect(x: -50, y: 700, width: 200, height: 200)
         }
-        
-        
         
         //circle3 animation
         UIView.animate(withDuration: 5, delay: 0, animations: {
@@ -252,8 +233,6 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
             self.circle3.frame = CGRect(x: 400, y: 480, width: 100, height: 100)
         }
         
-        
-        
         //circle4 animation
         UIView.animate(withDuration: 5, delay: 0, animations: {
             
@@ -275,12 +254,5 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
         UIView.animate(withDuration: 5) {
             self.circle4.frame = CGRect(x: 400, y: 200, width: 200, height: 200)
         }
-
-
-        
-        
     }
-    
-
-
 }
